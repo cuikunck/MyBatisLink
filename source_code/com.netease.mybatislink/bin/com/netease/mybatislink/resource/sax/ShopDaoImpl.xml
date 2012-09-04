@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="Shop" >
+
+  <resultMap id="resultMap" type="Shop" >
+    <id column="SHOP_ID" property="shopId" jdbcType="DECIMAL" />
+    <result column="SHOP_DETAIL" property="shopDetail" jdbcType="VARCHAR" />
+    <result column="SHOP_URL" property="shopUrl" jdbcType="VARCHAR" />
+    <result column="SHOP_LOGO_URL" property="shopLogoUrl" jdbcType="VARCHAR" />
+    <result column="SHOP_NAME_CN" property="shopNameCn" jdbcType="VARCHAR" />
+    <result column="SHOP_NAME_EN" property="shopNameEn" jdbcType="VARCHAR" />
+    <result column="SHOP_BRANCH" property="shopBranch" jdbcType="VARCHAR" />
+    <result column="CITY_ID" property="cityId" jdbcType="DECIMAL" />
+    <result column="SHOP_BRAND_ID" property="shopBrandId" jdbcType="DECIMAL" />
+    <result column="SHOP_GRADE" property="shopGrade" jdbcType="DECIMAL" />
+    <result column="SHOP_RANK" property="shopRank" jdbcType="DECIMAL" />
+    <result column="SHOP_ATTENTION_COUNT" property="shopAttentionCount" jdbcType="DECIMAL" />
+    <result column="SHOP_ADDRESS" property="shopAddress" jdbcType="VARCHAR" />
+    <result column="SHOP_LONG_LATI" property="shopLongLati" jdbcType="VARCHAR" />
+    <result column="SHOP_INDUSTRY" property="shopIndustry" jdbcType="DECIMAL" />
+    <result column="SHOP_LIMIT" property="shopLimit" jdbcType="DECIMAL" />
+  </resultMap>
+
+  <select id="selectShopList" resultMap="resultMap" parameterType="map" >
+    select * from TB_SHOP 
+    where SHOP_ID = SHOP_BRAND_ID 
+ 	<if test="cityId != null">
+		AND CITY_ID in (100000, #{cityId})
+	</if>
+	order by SHOP_RANK desc
+  </select>
+  <select id="selectShopListCount" resultType="int" parameterType="map" >
+    select count(1) from TB_SHOP 
+    where SHOP_ID = SHOP_BRAND_ID
+    <if test="cityId != null">
+		AND CITY_ID in (100000, #{cityId})
+	</if>
+  </select>
+  <select id="selectShop" resultMap="resultMap" parameterType="map" >
+    select * from TB_SHOP 
+    <where>
+		<if test="shopId != null">
+			SHOP_ID = #{shopId}
+		</if>
+ 	</where>
+  </select>
+
+  	<!-- 实现店铺关注数增加或减少的操作 -->
+	<update id="updateAttentionCount" parameterType="java.util.Map">
+		update TB_SHOP set SHOP_ATTENTION_COUNT = SHOP_ATTENTION_COUNT+#{count} where SHOP_ID = #{shopId}
+	</update>
+   
+  <update id="updateShopBrowseCountFromMobileBG" parameterType="map" >
+	update TB_SHOP 
+	set SHOP_BROWSE_TIMES_CLIENT=SHOP_BROWSE_TIMES_CLIENT+#{count} 
+	where SHOP_ID=#{shopId}
+  </update>
+</mapper>

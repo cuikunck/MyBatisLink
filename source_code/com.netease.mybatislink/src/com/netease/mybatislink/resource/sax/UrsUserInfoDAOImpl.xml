@@ -1,0 +1,408 @@
+<?xml version = "1.0" encoding = "UTF-8"  ?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://www.ibatis.com/dtd/sql-map-2.dtd">
+    
+<sqlMap  namespace  = "UrsUserInfoDAOImpl" >
+	
+	<parameterMap id="getUserInfoParamMap" class="java.util.Map">
+        <parameter property="username" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="lockstate" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="email" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT"/>
+        <parameter property="pass" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="question" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="answer" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="birthday" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="pdt" jdbcType="BIGINT"  javaType="java.lang.Long" mode="OUT" />
+        <parameter property="forward" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ip" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="lasttime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="bphone" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="cprefer" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="phone" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="pingma" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="address" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="degree" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="firstname" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="gender" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="income" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="industry" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="lastname" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="mobile" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT" />
+        <parameter property="occupation" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="province" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="postcode" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="idnum" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="bindStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="otpSerialNo" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="otpBindPdt" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="bindDate" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="discardDate" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="boundPhones" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="phoneStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="ppcSns" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppcSeeds" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppcTimes" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppcStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="mppStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="realNameStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="realNameRegTime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="realNameId" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="createTime" jdbcType="TIMESTAMP"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="otpOverdueUnbindTime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="ppcMobiles" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="lastModifyTime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="realNameUpdateTime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="mobile" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppActivated" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="otpBindTimes" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppcRealTimes" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="vipStatus" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="isTrustyPhoneVip" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="isTrustyAddrVip" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="alias" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="qq" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="numberid" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="unionId" jdbcType="BIGINT"  javaType="java.lang.Long" mode="OUT" />
+        <parameter property="relateUsername" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="loginEmail" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+    </parameterMap>
+    
+    <parameterMap id="getUserInfo126ParamMap" class="java.util.Map">
+        <parameter property="username" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="lockState" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="email" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="pass" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="question" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="answer" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="birthday" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="pdt" jdbcType="BIGINT"  javaType="java.lang.Long" mode="OUT" />
+        <parameter property="forward" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ip" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="lastTime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="bphone" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="cprefer" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="phone" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="pingma" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="address" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="degree" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="firstname" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="gender" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="income" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="industry" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="lastname" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="mobilePhoneNumber" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="occupation" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="province" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="postcode" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="idnum" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="createTime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="lastModifyTime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="ppActivated" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="alias" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="qq" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="numberid" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="loginEmail" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+    </parameterMap>
+    
+    <parameterMap id="getUserInfoGeneralParamMap" class="java.util.Map">
+        <parameter property="username" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="lockState" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="email" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="pass" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="question" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="answer" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="birthday" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="pdt" jdbcType="BIGINT"  javaType="java.lang.Long" mode="OUT" />
+        <parameter property="forward" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ip" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="lastTime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="bphone" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="cprefer" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="phone" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="pingma" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="address" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="degree" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="firstname" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="gender" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="income" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="industry" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="lastname" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="mobilePhoneNumber" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="occupation" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="province" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="postcode" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="idnum" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="createTime" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="lastModifyTime" jdbcType="DATE"  javaType="java.util.Date" mode="OUT" />
+        <parameter property="ppActivated" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="vipMailUserStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="alias" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="qq" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="numberid" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="loginEmail" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+    </parameterMap>
+    
+    <parameterMap id="getPpInfoParamMap" class="java.util.Map">
+        <parameter property="username" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="ppActivated" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="IN" />
+        <parameter property="ppFlag" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="bindStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="otpSerialNo" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="otpBindPdt" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="bindDate" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="discardDate" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="boundPhones" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="phoneStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="ppcSns" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppcSeeds" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppcTimes" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppcStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="mppStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="otpOverdueUnbindTime" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppcMobiles" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="mobile" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="realNameStatus" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="realNameRegTime" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="realNameId" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="realNameUpdateTime" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="otpBindTimes" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="ppcRealTimes" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+        <parameter property="vipStatus" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+ 		<parameter property="isTrustyPhoneVip" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="isTrustyAddrVip" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="OUT" />
+        <parameter property="unionId" jdbcType="BIGINT"  javaType="java.lang.Long" mode="OUT" />
+        <parameter property="relateUsername" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+    </parameterMap>
+    
+    <parameterMap id="insertRegisterUserMap" class="com.netease.passport.model.userinfo.UserInfo">
+        <parameter property="username" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="email" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN"/>
+        <parameter property="pass" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="question" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="answer" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="birthdayDb" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="pdt" jdbcType="BIGINT"  javaType="java.lang.Long" mode="IN" />
+        <parameter property="forward" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="ip" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="ageGroup" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="auction" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="businessPhone" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="city" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="community" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="companyName" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="contactPhone" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="pingma" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="degree" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="address" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="fax" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="firstname" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="gender" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="IN" />
+        <parameter property="income" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+        <parameter property="industry" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="lastname" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="marital" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="IN" />
+        <parameter property="mobile" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="occupation" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="paymentMethod" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="idType" jdbcType="INTEGER"  javaType="java.lang.Integer" mode="IN" />
+        <parameter property="province" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="regProduct" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="postcode" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="idnum" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="unannouce1" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="unannouce2" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="unannouce3" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="qq" jdbcType="VARCHAR"  javaType="java.lang.String" mode="IN" />
+        <parameter property="retCode" jdbcType="VARCHAR"  javaType="java.lang.String" mode="OUT" />
+    </parameterMap>
+	
+    <!-- 调用存储过程getUserInfo取帐号基本信息及密保信息，适用于163帐号 -->
+    <procedure id="getUserInfo" parameterMap="getUserInfoParamMap">
+		{call GET_USER_INFO_N (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}
+    </procedure>
+    
+    <!-- 调用存储过程getUserInfo126取帐号基本信息，适用于126帐号 -->
+    <procedure id="getUserInfo126" parameterMap="getUserInfo126ParamMap">
+			{call get_user_info_126_d(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}
+    </procedure>
+    
+    <!-- 调用存储过程getUserInfoGeneral取帐号基本信息，适用于yeah,popo,vip,188,外域邮箱等帐号 -->
+    <procedure id="getUserInfoGeneral" parameterMap="getUserInfoGeneralParamMap">
+			{call get_user_info_yeah_d (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}
+    </procedure>
+    
+    <!-- 调用存储过程getPpInfo取密保信息，适用于非163帐号 -->
+    <procedure id="getPpInfo" parameterMap="getPpInfoParamMap">
+			{call get_pp_info_h(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}
+    </procedure>
+    
+    <!-- 调用存储过程insertRegisterUser插入用户信息，适用于非163帐号 -->
+    <procedure id="insertRegisterUser" parameterMap="insertRegisterUserMap">
+    	{call reg_user_info_prc_b(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}
+    </procedure>
+    
+	<insert id="insertChangeHistory" parameterClass="com.netease.passport.model.UpdateInfoHistory">
+		insert into update_info_history(user_opr,ssn,userip,update_time,old_password) values(#user_opr#,#ssn#,#userip#,sysdate,#old_password#)
+	</insert>
+	
+	<update id="updateSecretInfo" parameterClass="com.netease.passport.model.userinfo.UserInfo">
+		update account
+		<dynamic prepend="set">
+			<isNotEmpty prepend="," property="question">
+				password_hint_question=#question#
+			</isNotEmpty>
+			<isNotEmpty prepend="," property="answer">
+				password_hint_answer=#answer#
+			</isNotEmpty>
+			<isNotEmpty prepend="," property="birthdayDb">
+				date_of_birth=to_date(#birthdayDb#,'yyyymmdd')
+			</isNotEmpty>
+			<isNotEmpty prepend="," property="email">
+				email_address=#email#,product_activated = bitand(product_activated ,#pdtLong#)
+			</isNotEmpty>
+			<isNotEmpty prepend="," property="pass">
+				password=#pass#,update_time=sysdate
+			</isNotEmpty>
+		</dynamic>
+		where ssn=#username#
+	</update>
+	<update id="validateBind" parameterClass="java.lang.String">
+		update otpinfo set bind_status = 2 where ssn =#ssn# and bind_status=1
+	</update>
+
+	<update id="updateAccount" parameterClass="com.netease.passport.model.userinfo.UpdateAccount">
+		update account
+		<dynamic prepend="set">
+			<isNotNull prepend="," property="email">
+				EMAIL_ADDRESS=#email#
+			</isNotNull>
+			<isNotNull prepend="," property="qq">
+				QQ_NUMBER=#qq#
+			</isNotNull>
+			<isNotNull prepend="," property="deactivate_Bit">
+				product_activated=bitand(product_activated ,#deactivate_Bit#)
+			</isNotNull>
+			<isNotNull prepend="," property="pass">
+				PASSWORD=#pass#
+			</isNotNull>
+			<isNotNull prepend="," property="question">
+				PASSWORD_HINT_QUESTION=#question#
+			</isNotNull>
+			<isNotNull prepend="," property="answer">
+				PASSWORD_HINT_ANSWER=#answer#
+			</isNotNull>
+			<isNotNull prepend="," property="birthdayDb">
+				DATE_OF_BIRTH=to_date(#birthdayDb#,'yyyymmdd')
+			</isNotNull>
+			<isNotNull prepend="," property="pdtLong">
+				product_activated=#pdtLong#
+			</isNotNull>
+		</dynamic>
+		where ssn=#username#
+	</update>
+	
+	<update id="updatePassword" parameterClass="java.util.HashMap">
+		update account set password=#password#,update_time=sysdate where ssn=#username#
+	</update>
+	
+	<update id="updateProfile" parameterClass="com.netease.passport.model.userinfo.UpdateProfile">
+		update user_profile
+		<dynamic prepend="set">
+			<isNotNull prepend="," property="gender">
+				gender=#gender#
+			</isNotNull>
+			<isNotNull prepend="," property="phone">
+				contact_number=#phone#
+			</isNotNull>
+			<isNotNull prepend="," property="address">
+				detail_address=#address#
+			</isNotNull>
+			<isNotNull prepend="," property="degree">
+				education_lever=#degree#
+			</isNotNull>
+			<isNotNull prepend="," property="firstname">
+				first_name=#firstname#
+			</isNotNull>
+			<isNotNull prepend="," property="lastname">
+				last_name=#lastname#
+			</isNotNull>
+			<isNotNull prepend="," property="income">
+				income_group=#income#
+			</isNotNull>
+			<isNotNull prepend="," property="industry">
+				industry=#industry#
+			</isNotNull>
+			<isNotNull prepend="," property="occupation">
+				occupation=#occupation#
+			</isNotNull>
+			<isNotNull prepend="," property="province">
+				province=#province#
+			</isNotNull>
+			<isNotNull prepend="," property="postcode">
+				zip_code=#postcode#
+			</isNotNull>
+			<isNotNull prepend="," property="idType">
+				price=#idType#
+			</isNotNull>
+			<isNotNull prepend="," property="idnum">
+				IDNUM=#idnum#
+			</isNotNull>
+			<isNotNull prepend="," property="pingma">
+				CREDIT_CARD_INFORMATION=#pingma#
+			</isNotNull>
+		</dynamic>
+		where ssn=#username#
+	</update>
+	<select id="queryMobCheckcode" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		select ssn,user_ip from mob_verify_queue where sms_receive_time > (sysdate-#interval#) and random_code = #randomcode# and mobile =#mobile# order by sms_receive_time desc
+	</select>
+	
+	<update id="queryMobCheckcodeUpdate" parameterClass="java.util.HashMap">
+		update mob_verify_queue set random_code=(0-random_code) where sms_receive_time>(sysdate-#interval#) and random_code = #randomcode#  and mobile = #mobile#
+	</update>
+	
+	<select id="queryAliasAcount" parameterClass="java.lang.String" resultClass="java.util.HashMap">
+		select 1 from unactivated_alias_account where ssn = #ssn# 
+	</select>
+	
+	<update id="updateAliasAcount" parameterClass="java.util.HashMap">
+		update unactivated_alias_account set alias_ssn = #alias_ssn#, key_update_time = sysdate, key = #key#, key_times = 1,status = 1 where ssn = #ssn# 
+	</update>
+	
+	<insert id="insertAliasAcount" parameterClass="java.util.HashMap">
+		insert into unactivated_alias_account(ssn,alias_ssn,create_time,create_ip,key_update_time,key,key_times,status) values (#ssn#, #alias_ssn#, sysdate, #userip#, sysdate, #key#, 1, 1)
+	</insert>
+	
+	<select id="isUserExist" parameterClass="java.lang.String" resultClass="java.lang.String">
+		select 1 from account where ssn = #ssn# 
+	</select>
+	
+	<select id="queryOtherDomainUserStatus" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+		select status from unactivated_account where ssn = #ssn# 
+	</select>
+	
+	<select id="checkActivateLoginEmail" parameterClass="java.lang.String" resultClass="java.util.HashMap">
+		select * from UNACTIVATED_ALIAS_ACCOUNT where ssn = #ssn#
+	</select>
+	
+	<update id="updateLoginEmail" parameterClass="java.util.HashMap">
+		update account set login_email = #login_email# where ssn = #ssn#
+	</update>
+	
+	<update id="updateAliasAccountStatus" parameterClass="java.util.HashMap">
+		update unactivated_alias_account set status = 2, activate_time = sysdate, activate_ip = #activate_ip# where ssn = #ssn# 
+	</update>
+	
+	<update id="bindPpActivated" parameterClass="java.util.HashMap">
+		update account set pp_activated=(nvl(pp_activated,0)+#bind_value#)-bitand(nvl(pp_activated,0),#bind_value#) where ssn=#ssn#
+	</update>
+	
+	<update id="unbindPpActivated" parameterClass="java.util.HashMap">
+		update account set pp_activated=bitand(nvl(pp_activated,0),#bind_value#) where ssn=#ssn#
+	</update>
+	
+	<delete id="deleteAccount" parameterClass="java.lang.String">
+		delete from account where ssn = #ssn#
+	</delete>
+</sqlMap>

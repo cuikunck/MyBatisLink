@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.workbench.texteditor.hyperlinkDetectors">
+      <hyperlinkDetector
+            activate="true"
+            class="com.netease.mybatislink.hyperlink.java.JavaHyperlinkDetector"
+            id="com.netease.passport.ibatis.hyperlink.JavaHyperlinkDetector"
+            name="JavaHyperlinkDetector"
+            targetId="org.eclipse.jdt.ui.javaCode">
+      </hyperlinkDetector>
+   </extension>
+   <extension
+         point="org.eclipse.ui.workbench.texteditor.hyperlinkDetectors">
+      <hyperlinkDetector
+            activate="true"
+            class="com.netease.mybatislink.hyperlink.xml.XMLHyperlinkDetector"
+            id="com.netease.passport.ibatis.hyperlink.XMLHyperlinkDetector"
+            name="XMLHyperlinkDetector"
+            targetId="org.eclipse.core.runtime.xml">
+      </hyperlinkDetector>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="com.netease.passport.ibatis.open"
+            label="Open iBatis Config"
+            visible="true">
+         <action
+               class="com.netease.mybatislink.open.OpenAction"
+               definitionId="com.netease.passport.ibatis.OpenIBatisConfig"
+               icon="icons/ibatis_icon.png"
+               id="com.netease.passport.ibatis.open.OpenAction"
+               label="Open iBatis Config"
+               menubarPath="navigate/open.ext2"
+               style="push"
+               toolbarPath="org.eclipse.search.searchActionSet/Search">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.ui.category.navigate"
+            description="Open iBatis Config"
+            id="com.netease.passport.ibatis.OpenIBatisConfig"
+            name="Open iBatis Config">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.netease.passport.ibatis.OpenIBatisConfig"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+M2+V">
+      </key>
+   </extension>
+
+</plugin>

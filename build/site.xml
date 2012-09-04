@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.netease.mybatislink.feature_1.0.0.jar" id="com.netease.mybatislink.feature" version="1.0.0" os="win32" ws="win32">
+      <category name="MyBatisLink"/>
+   </feature>
+   <category-def name="MyBatisLink" label="MyBatisLink">
+      <description>
+         IBatis/MyBatis Eclipse plugins help coders to navigate from java codes to the IBatis/MyBatis configuration xml files. The sqlmap elements of IBatis/MyBatis can be shown when coders press Ctrl and click the sqlmap element id in Java code. The plugin also provide a dialog to find the IBatis/MyBatis sqlmap elements.
+      </description>
+   </category-def>
+</site>
